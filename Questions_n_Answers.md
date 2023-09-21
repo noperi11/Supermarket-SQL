@@ -1,6 +1,9 @@
 # Analisa Aktivitas Penjualan Pada Supermarket
+Author : M Ilham Nofriansyah <br/>
+Instagram : @nofriansyah_i <br/>
+Email : ilhamnofriansyah02@gmail.com <br/>
 
-
+# Korelasi Dari Gender ke Pola Penjualan
 Perbandingan Gender Pembeli di Tiap Cabang
 ````sql
 SELECT
@@ -11,36 +14,50 @@ FROM Supermarket
 GROUP BY branch, gender
 ORDER BY branch, gender;
 ````
-branch | Gender | Jumlah|
+**Result**
+Branch | Gender | Jumlah|
 -------|--------|-------|
-A   |Female |161 |
-A	|Male   |179 |
-B	|Female |162 |
-B	|Male	|170 |
-C	|Female	|178 |
-C	|Male	|150 |
+A      |Female  |161    |
+A	   |Male    |179    |
+B	   |Female  |162    |
+B	   |Male	|170    |
+C	   |Female	|178    |
+C	   |Male	|150    |
 
-Perbandingan Jenis Pembeli ditiap Cabang
+Barang yang dijual ditiap Cabang
 ````sql
-select 
+select
     branch,
-    customer_type,
-    count(customer_type) as Jumlah_Customer
+    product_line as Jenis_Barang,
+    count(product_line) as Jumlah_barang
 from supermarket
-group by branch,customer_type
-order by branch,customer_type
+group by branch,product_line
 ````
-Branch | Jenis_Customer | Jumlah_Customer |
--------|----------------|---------------- |
-A	   |Member	        |167              |
-A      |Normal	        |173              |
-B	   |Member	        |165              |
-B	   |Normal	        |167              |
-C	   |Member	        |169              |  
-C	   |Normal	        |159              |
+**Result**
 
-Perbandingan Jenis Barang yang dijual ditiap cabang
+Branch|Jenis_Produk|  Jumlah_Pembeli|
+------|------------|---------------|
+A     |Electronic accessories	|60|
+A     |Fashion accessories	    |51|
+A     |Food and beverages	    |58|
+A	  |Health and beauty	    |47|
+A	  |Home and lifestyle	    |65|
+A	  |Sports and travel	    |59|
+B	  |Electronic accessories	|55|
+B	  |Fashion accessories	    |62|
+B	  |Food and beverages	    |50|
+B	  |Health and beauty	    |53|
+B	  |Home and lifestyle	    |50|
+B	  |Sports and travel	    |62|
+C	  |Electronic accessories	|55|
+C	  |Fashion accessories    	|65|
+C	  |Food and beverages	    |66|
+C	  |Health and beauty	    |52|
+C	  |Home and lifestyle	    |45|
+C	  |Sports and travel        |45|
 
+
+Perbandingan Jenis Barang yang Dijual Tiap Cabang dan Gender Pembeli
 ````sql
 SELECT
     branch,
@@ -71,6 +88,27 @@ C	    |Food and beverages	      |  66	           |  38             |	28         
 C	    |Health and beauty	      |  52	           |  23             |	29              |
 C	    |Home and lifestyle	      |  45	           |  25             |	20              |
 C	    |Sports and travel	      |  45	           |  29             |	16              |
+
+# Korelasi Pembelian Pada Pembeli Member dan Non-Member
+Perbandingan Jenis Pembeli ditiap Cabang
+````sql
+select 
+    branch,
+    customer_type,
+    count(customer_type) as Jumlah_Customer
+from supermarket
+group by branch,customer_type
+order by branch,customer_type
+````
+Branch | Jenis_Customer | Jumlah_Customer |
+-------|----------------|---------------- |
+A	   |Member	        |167              |
+A      |Normal	        |173              |
+B	   |Member	        |165              |
+B	   |Normal	        |167              |
+C	   |Member	        |169              |  
+C	   |Normal	        |159              |
+
 
 Perbandingan Berapa Jumlah barang yang dibeli dari Member dan Non-Member + keuntungan
 ````sql
