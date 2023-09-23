@@ -24,7 +24,9 @@ B	   |Male	|170    |
 C	   |Female	|178    |
 C	   |Male	|150    |
 
-Barang yang dijual ditiap Cabang
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/bd0cae36-3e0a-4592-b291-809d04c0c58d)
+
+Barang Yang dijual Tiap Cabang
 ````sql
 select
     branch,
@@ -90,6 +92,9 @@ C	    |Health and beauty	      |  52	           |  23             |	29          
 C	    |Home and lifestyle	      |  45	           |  25             |	20              |
 C	    |Sports and travel	      |  45	           |  29             |	16              |
 
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/22df6a44-a987-4c5f-bf65-4d096b02d871)
+
+
 # Korelasi Pembelian Pada Pembeli Member dan Non-Member
 Perbandingan Jenis Pembeli ditiap Cabang
 ````sql
@@ -111,27 +116,32 @@ B	   |Normal	        |167              |
 C	   |Member	        |169              |  
 C	   |Normal	        |159              |
 
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/8de378e5-851e-4cf0-b39b-f6df8c693a7e)
+
 
 Perbandingan Berapa Jumlah barang yang dibeli dari Member dan Non-Member dan juga keuntungan nya
 ````sql
 Select 
     branch,
     customer_type as Jenis_Pembeli,
-    avg(quantity) ,
-    avg(gross_income)
+    sum(quantity) Jumlah_Quantity ,
+    round(sum(gross_income)) as Jumlah_Keuntungan
 from supermarket
 group by customer_type,branch
-order by branch
+order by customer_type
 ````
 **Result** :
-Cabang |Jenis Pembeli    |Avg(Quantity)     |Gross Income     |
+Cabang |Jenis Pembeli    |Quantity     |Jumlah Keuntungan     |
 -------|-----------------|------------------|-----------------|
-A	   |Member	         |5.77245508982036	|15.29440419161676|
-A	   |Normal	         |5.17341040462428	|14.46817919075145|
-B	   |Member	         |5.6	            |15.49918787878788|
-B	   |Normal	         |5.36526946107784	|14.96805988023952|
-C	   |Member	         |5.30769230769231	|16.02741124260355|
-C	   |Normal	         |5.87421383647799	|16.078893081761  |
+A	|Member	|964	|2554|
+B	|Member	|924	|2557|
+C	|Member	|897	|2709|
+A	|Normal	|895	|2503|
+B	|Normal	|896	|2500|
+C	|Normal	|934	|2557|
+
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/3c0160da-3319-49c1-aee1-9dcecebef7d0)
+
 
 ````sql
 select 
@@ -154,6 +164,9 @@ Normal	|Food and beverages    |    80|
 Normal	|Health and beauty     |    79|
 Normal	|Home and lifestyle    |    77|
 Normal	|Sports and travel     |    79|
+
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/74029340-09ea-429d-9c1b-6acf2099e45a)
+
 
 # Korelasi waktu pembelian terhadap penjualan
 waktu pembelian
