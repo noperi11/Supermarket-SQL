@@ -92,7 +92,8 @@ C	    |Health and beauty	      |  52	           |  23             |	29          
 C	    |Home and lifestyle	      |  45	           |  25             |	20              |
 C	    |Sports and travel	      |  45	           |  29             |	16              |
 
-![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/22df6a44-a987-4c5f-bf65-4d096b02d871)
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/02a7b153-411d-4fc5-b9e7-491dd133e357)
+
 
 
 # Korelasi Pembelian Pada Pembeli Member dan Non-Member
