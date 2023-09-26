@@ -142,7 +142,7 @@ C	|Normal	|934	|2557|
 
 ![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/3c0160da-3319-49c1-aee1-9dcecebef7d0)
 
-
+Penjualan Jenis Produk antara Member dan Non-Member
 ````sql
 select 
 customer_type,product_line,count(product_line) as jumlah_penjualan
@@ -169,7 +169,7 @@ Normal	|Sports and travel     |    79|
 
 
 # Korelasi waktu pembelian terhadap penjualan
-waktu pembelian
+Waktu Pembelian 
 ````sql
 SELECT
     time_classification as Time,
@@ -194,6 +194,10 @@ Time       |Jumlah_Pembeli|avg(quantity)     |
 Afternoon  |	528       |	5.57954545454545|
 Evening    |	281       |	5.43060498220641|
 Morning    |	191       |	5.43455497382199|
+
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/de7051ab-cd82-4364-9d83-7c2ed2c4778a)
+
+Penjualan Jenis Produk Berdasarkan Waktu
 ````sql
 SELECT
     time_classification as Time,
@@ -234,8 +238,11 @@ Morning	    |27	           |Health and beauty     |
 Morning	    |39	           |Home and lifestyle    |
 Morning	    |31	           |Sports and travel     |
 
-# Pola penjualan perbulan
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/a1904069-de57-46d4-988f-056067f1423b)
 
+
+# Pola penjualan perbulan
+Penjualan Perbulan
 ````sql
 SELECT
     time_classification,count(time_classification)
@@ -259,6 +266,9 @@ January	    |352           |
 February	|303           |
 Maret	    |345           |
 
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/192831fa-ce39-43a8-a3fe-e7ed5d1523a4)
+
+Penjualan Jenis Produk Perbulan
 
 ````sql
 SELECT
@@ -298,3 +308,6 @@ Maret	    |57	|Health and beauty       |
 Maret	    |63	|Home and lifestyle      |
 Maret	    |56	|Food and beverages      |
 Maret	    |62	|Electronic accessories  |
+
+![image](https://github.com/noperi11/Supermarket-SQL/assets/126463961/2635357d-9f85-4ead-872c-13c67d515e5e)
+
